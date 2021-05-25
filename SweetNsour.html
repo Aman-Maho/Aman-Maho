@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width",initial-scale="1.0">
+<Title>PastryHub</Title>
+<link rel = "stylesheet" href="style.css">  
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+<body>
+    <header>
+        <!-- top left Logo Name-->
+        <a href="#" class="logo">Pastry<span>Hub.</span></a>
+        
+        <!-- top Right / Navigation -->
+        <ul class="navigation">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Front page text and button menu -->
+    <section class="banner" id="banner" >
+        <div class="content">
+            <h2> Taste the pleasure</h2>
+             <p> PastryHub </p>
+             <a href="#menu" class="btn">Our Menu</a>
+        </div>
+    </section>
+
+    <!-- About us section -->
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col50">
+                <h2 class="titleText"><span>A</span>bout Us</h2>
+                <p>The 'PastryHub' is a new type of pastry shop selling not only pastries but also the mauritain "Gato Sale". The organization has just open its first branch in Port-Louuis. <br><br> sitauted in Port-Louis at la rue des forges, you can found the yummiest pastries alongside the famous "gato sale" as from 8 a.m till 17p.m. </p>
+
+            </div>
+            <div class="col50">
+                <div class="imgBx">
+                    <img src="../Pastry Shop/images/dish7a.jpg">
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slideshow-->
+    <div class="slider">
+        <img src ='../Pastry Shop/images/pastry1.jpg'class = 'active'>
+        <img src ='../Pastry Shop/images/sweet2.jpg'> 
+        <img src ='../Pastry Shop/images/sweet3.jpg'> 
+        <img src ='../Pastry Shop/images/sour3.jpg'> 
+
+    </div>
+   
+    <!-- Menu section -->
+    <section class="menu" id="menu"> 
+        <div class="title">
+            <h2 class="titleText">Our <span>M</span>enu</h2>
+            <p>Some of our pastries and Gato sale. D'ont hesitate to click view All button to have it All</p>
+        <!-- picture box -->
+        </div>
+            <div class="content">
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="../Pastry Shop/images/pastry1.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>Croissant</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="../Pastry Shop/images/sweet2.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>puit d'amour</h3>
+                    </div>
+                </div> 
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="../Pastry Shop/images/sweet1.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>Macaroon</h3>
+                    </div>
+                </div> 
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="../Pastry Shop/images/sour3.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>Cheese balls</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="../Pastry Shop/images/sour1.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>samosa</h3>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="../Pastry Shop/images/sour4.jpg">
+                    </div>
+                    <div class="text">
+                        <h3>arouille</h3>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="title">
+            <a href="#" class="btn">view All</a>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="title-white">
+            <h2 class="title-text"><span>C</span>ontact Us</h2>
+            <p> we are at your disposal</p>
+        </div>
+        <div class="contactForm">
+            <h3>Send Message</h3>
+            <div class="inptBox">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="inptBox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inptBox">
+                <textarea placeholder="Message"></textarea>
+            </div>
+            <div class="inptBox">
+                <input type="submit" value="Send">
+            </div>
+        </div>
+    </section>
+  
+    <script type="text/javascript">
+    window.addEventListener('scroll' ,function(){
+     const header = document.querySelector('header');
+     header.classList.toggle("sticky",window.scrollY > 0);   
+    });
+    </script>
+     <!-- Function to change slide auto-->
+
+     function slider(){
+        $current = $('.slider img.active');
+        if($current.length ==0){
+            $(.slider img:first-child).addClass('active');
+        }else{
+            $next = $current.removeClass('active').next();
+            if($next.length == 0){
+                $('.slider img:first-child').addClass('active');
+            }else{
+                $next.addClass('active');
+            }
+        }
+    }
+    setInterval(slider,5000);
+
+
+</body>
+</html>
